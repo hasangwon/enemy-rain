@@ -1,20 +1,32 @@
 // class Hero {
+//     constructor(){
+//         this.man = document.querySelector('#hero'); 
+//     }
 
 // }
 const man = document.querySelector("#hero");
-const manstyle = document.querySelector('#hero').style;
 let position = 300;
 
-window.addEventListener('keydown', function(event) {    
+function moveManRight(){
+    position = position + 1;
+    man.style.left = position + "px";
+}
+function moveManLeft(){
+    position = position - 1;
+    man.style.left = position + "px";
+}
 
-    if(event.code=="ArrowRight"&& man.offsetLeft <= 560 ){
-        position = position + 8;
-        man.style.left = position + "px";
+window.addEventListener('keydown', function(event) {    
+    if(event.code=="ArrowRight"&& man.offsetLeft <= 556 ){
+        for(i=0;i<10;i++){
+            setTimeout(moveManRight,(i+1)*10)
+        }
     }
 
     if(event.code=="ArrowLeft"&& man.offsetLeft >= 10){
-        position = position - 8;
-        man.style.left = position + "px";
+        for(i=0;i<10;i++){
+            setTimeout(moveManLeft,(i+1)*10)
+        }
     }
 
     if(event.code=="ArrowRight"){

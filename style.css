@@ -1,14 +1,20 @@
 body{
-    height :100vh;
+    height :95vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    position:relative;
 
 }
 #bg{
     position:relative;
     width: 600px;
     height:auto;
+}
+#tools{
+    display: flex;
+    align-items: center;
 }
 #background{
     width: 100%;
@@ -26,19 +32,78 @@ body{
     bottom: 5px;
     left:50%;
     margin-left:-10px;
+    z-index: 1;
 }
 
 #btnstart{
+    position:fixed;
+    top:15px;
+    left:30%;
     text-align: center;
-    position: fixed;
-    top : 100px;
-    left : 50%;
     margin-left:-60px;
     font-size:35px;
     background-color: green;
     color: white;
     border : none;
-    width: 130px;
+    width: 125px;
     height: 60px;
+    z-index: 1;
+}
+#account{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position:fixed;
+    top:15px;
+    left:50%;
+    text-align: center;
+    margin-left:-60px;
+    font-size:35px;
+    background-color: yellow;
+    color: black;
+    border : none;
+    width: 120px;
+    height: 60px;
+    z-index: 1;
+}
+#time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position:fixed;
+    top:15px;
+    left:70%;
+    text-align: center;
+    margin-left:-60px;
+    font-size:35px;
+    background-color: blueviolet;
+    color: white;
+    border : none;
+    width: 120px;
+    height: 60px;
+    z-index: 1;
 }
 
+.ghost{
+    background-image: url("./images/enemy.png");
+    background-position: 0px 0px;
+    /*background-position: 45px 0px; 유령 뒤짐*/
+    position : absolute;
+    width: 45px;
+    height: 54px;
+    top: 0px;
+    left: 50%;
+}
+
+/*사용안함*/
+#scoreBox{
+    position:fixed;
+    left:45%;
+    top:45%;
+    width:300px;
+    height:300px;
+    background-color: greenyellow;
+    display: none;
+}
