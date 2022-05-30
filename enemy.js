@@ -1,17 +1,22 @@
 // class Enemy {
   
 // }
-const button = document.querySelector("#btnstart");
+const button = document.querySelector(".btnstart");
 const field = document.querySelector("#bg");
 const hero = document.querySelector("#hero");
 const countBox = document.querySelector(".count");  
 const timeBox = document.querySelector("#time");
-let times = 0, count = 0, z = 100;
+let times = 0, count = 0, z = 60;
 
 button.addEventListener('click',function(){
     button.style.backgroundColor = "red";
     button.style.color = "black";
-    button.innerHTML = "Playing";
+    button.style.display = "none";
+    let playing = document.createElement("button");
+    document.querySelector("#tools").appendChild(playing);
+    playing.className = ("none");
+    playing.innerHTML = "Playing";
+
 
     ghostAll();
     gamePlay = setInterval(ghostAll, 2000);
@@ -22,10 +27,11 @@ function time(){
     z = z - 1;
     timeBox.innerHTML =  z; 
     if(z === 0){
-        alert("끝");
+        alert(`KILL : ${count}`);
         clearInterval(timePlay);
         clearInterval(gamePlay);
         countBox.style.display = "block";
+        location.reload();
     }
 }
 

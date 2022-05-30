@@ -35,7 +35,7 @@ body{
     z-index: 1;
 }
 
-#btnstart{
+.btnstart{
     position:fixed;
     top:15px;
     left:30%;
@@ -43,6 +43,20 @@ body{
     margin-left:-60px;
     font-size:35px;
     background-color: green;
+    color: white;
+    border : none;
+    width: 125px;
+    height: 60px;
+    z-index: 1;
+}
+.none{
+    position:fixed;
+    top:15px;
+    left:30%;
+    text-align: center;
+    margin-left:-60px;
+    font-size:35px;
+    background-color: red;
     color: white;
     border : none;
     width: 125px;
